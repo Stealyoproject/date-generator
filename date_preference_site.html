@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Date Generator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent:#ff6f61;
+      --bg1:#ffe5d9;
+      --bg2:#fff1e6;
+      --bg3:#fde2e4;
+    }
+    *{box-sizing:border-box;}
+    body{
+      font-family:'Poppins',sans-serif;
+      background:linear-gradient(135deg,var(--bg1) 0%,var(--bg2) 50%,var(--bg3) 100%);
+      margin:0;
+      padding:20px;
+    }
+    .container{
+      background:#fff;
+      padding:32px 36px;
+      max-width:680px;
+      margin:40px auto;
+      border-radius:18px;
+      box-shadow:0 8px 24px rgba(0,0,0,.1);
+      position:relative;
+      overflow:hidden;
+      color:#333;
+    }
+    h1{margin:0 0 10px;font-size:2rem;color:var(--accent);text-align:center;}
+    h2{margin:30px 0 12px;font-size:1.2rem;color:var(--accent);display:flex;align-items:center;gap:6px;}
+    label{display:block;margin:10px 0;font-weight:500;cursor:pointer;transition:transform .15s ease;color:#333;}
+    label:hover{transform:translateX(3px);}  
+    input[type="checkbox"],input[type="date"]{margin-right:10px;accent-color:var(--accent);}  
+    textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;margin-top:8px;font-family:'Poppins',sans-serif;resize:vertical;color:#333;}
+    .submit-btn{
+      display:block;
+      margin:28px auto 12px;
+      padding:12px 28px;
+      background:var(--accent);
+      color:#fff;
+      border:none;
+      border-radius:30px;
+      font-size:1rem;
+      font-weight:600;
+      cursor:pointer;
+      transition:background .2s ease, transform .15s ease;
+    }
+    .submit-btn:hover{background:#ff4f48;transform:translateY(-2px);}  
+    .footer{margin-top:24px;font-style:italic;color:#666;font-size:.9rem;text-align:center;}
+  </style>
+</head>
+<body>
+  <!-- Formspree form wrapper -->
+  <form action="https://formspree.io/f/manjqajg" method="POST">
+    <div class="container">
+      <h1>The Date Generator</h1>
+
+      <h2>1. Choose the vibe ➡️</h2>
+      <label><input type="checkbox" name="vibe_coffee"/>☕ coffee + talk</label>
+      <label><input type="checkbox" name="vibe_walk"/>🚶‍♂️ Walk & explore someplace new</label>
+      <label><input type="checkbox" name="vibe_foodcrawl"/>🍣 Food crawl</label>
+      <label><input type="checkbox" name="vibe_spontaneous"/>🎢 Spontaneous!</label>
+
+      <h2>2. Social battery gauge 🔋</h2>
+      <label><input type="checkbox" name="social_notice"/>🥲 Need 2 business days' notice</label>
+      <label><input type="checkbox" name="social_chill"/>🙂 Chill small‑talk is cool</label>
+      <label><input type="checkbox" name="social_energy"/>⚡ Energizer bunny!</label>
+
+      <h2>4. Allergy / Dietary Restrictions 🚑</h2>
+      <label>Any allergies or dietary restrictions I should know about?</label>
+      <textarea rows="3" name="allergies" placeholder="e.g. shellfish allergy, lactose‑free, none..."></textarea>
+
+      <h2>5. Non‑Negotiables 🚫</h2>
+      <label>List one or two things that will 100% ruin the vibe:</label>
+      <textarea rows="3" name="nonneg" placeholder="cliff‑diving, pineapple on pizza (your call)"></textarea>
+
+      <h2>6. Dates of Eligibility 📅</h2>
+      <label>Select which of these dates you’re free (tick multiple if you like!):</label>
+      <label><input type="checkbox" name="date_0612" value="2025-06-12"/>June 12, 2025</label>
+      <label><input type="checkbox" name="date_0613" value="2025-06-13"/>June 13, 2025</label>
+      <label><input type="checkbox" name="date_0614" value="2025-06-14"/>June 14, 2025</label>
+
+      <button class="submit-btn" type="submit">Generate Plan 🚀</button>
+
+      <div class="footer">Thanks for your response! I’ll craft an oddly specific plan based on this. </div>
+    </div>
+  </form>
+</body>
+</html>
